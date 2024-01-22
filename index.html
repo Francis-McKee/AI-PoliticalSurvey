@@ -56,7 +56,7 @@
         ];
 
         const answerOptions = [
-            ["Build on welfare programs, increasing government assistance to address poverty.", "Support work requirements and reduced government assistance.", "Promote private charity initiatives.", "Oppose government intervention."],
+            ["Build on welfare programs, increasing government assistance to address poverty.", "Support work requirements and reduced government assistance.", "Promote private charity initiatives.", "Avoid direct governmental monetary intervention."],
             ["Advocate for progressive taxation so that higher earners pay more, to address income inequality.", "Oppose government intervention in the economy, such as that government taxation is considered theft.", "Favor a balanced approach to taxation based on income and wealth.", "Support lower taxes, especially for high-income earners."],
             ["Advocate for stronger environmental regulations to protect the planet.", "Promote market-based solutions for environmental challenges.", "Support balanced environmental policies that consider both economic and environmental concerns.", "Oppose strict environmental regulations to promote economic growth."],
             ["Favor a single-payer healthcare system for universal coverage.", "Support a public healthcare system with expanded access and affordability.", "Oppose government involvement in healthcare and support individual responsibility.", "Advocate for free-market competition and limited government involvement in healthcare."],
@@ -75,6 +75,10 @@
 
         // Function to display the start screen
         function displayStartScreen() {
+            // Clear the result container
+            resultContainer.style.display = 'none';
+            resultMessage.innerHTML = '';
+            
             surveyContainer.innerHTML = `
                 <h1>Welcome to the Political Party Survey!</h1>
                 <p>Please answer the following questions to determine your political affiliation.</p>
@@ -160,6 +164,7 @@
             resultMessage.innerHTML = `
                 <p>Based on your responses, your predicted political party affiliation is:</p>
                 <h1 style="font-size: 24px; font-weight: bold; margin-top: 10px;">${party}</h1>
+                <button onclick="displayStartScreen()">Start Again</button>
             `;
         }
 
